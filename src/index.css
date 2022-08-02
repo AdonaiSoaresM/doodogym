@@ -9,8 +9,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  color: white;
-  background-color: rgb(9, 2, 31);
+  background-color: rgb(251, 251, 247);
 }
 
 code {
@@ -18,7 +17,7 @@ code {
     monospace;
 }
 
-* {
+/* * {
   border: 1px solid red;
-}
+} */
 
