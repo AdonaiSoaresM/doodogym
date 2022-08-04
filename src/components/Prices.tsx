@@ -4,18 +4,27 @@ import { Link } from "react-router-dom"
 function Prices() {
 
     const [selected, setSelect] = useState<String>()
+    const [plano, setPlano] = useState<String>()
 
     function selectBlack() {
         setSelect('black')
+        setPlano('black')
     }
     function selectSmart() {
         setSelect('smart')
+        setPlano('smart')
+    }
+
+    function checkPlano(){
+        if(plano){
+            return '/register/' + plano
+        } else return '#'
     }
 
     return (
-        <div className="flex flex-col items-center mt-8">
+        <div className="flex flex-col items-center mt-8 mb-8">
 
-            <div className="flex justify-center mb-12">
+            <div className="flex justify-center mb-12" id="planos">
                 <p className="text-3xl font-bold">Escolha <span className="text-yellow-500">o seu plano</span></p>
             </div>
 
@@ -60,7 +69,7 @@ function Prices() {
             </div>
 
             <div className="flex flex-row items-center justify-center w-full mt-16 mb-4 h-14">
-                <Link to={'http://www.google.com.br'}><button className="flex flex-row items-center justify-center w-64 h-12 font-bold text-white bg-red-800 rounded-full">
+                <Link to={checkPlano()}><button className={`flex flex-row items-center justify-center w-64 h-12 transition font-bold text-white ${ plano ? 'bg-red-800' : 'bg-gray-400' } rounded-full`}>
                     Começar agora</button></Link>
             </div>
 

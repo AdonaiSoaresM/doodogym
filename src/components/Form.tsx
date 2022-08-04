@@ -10,11 +10,12 @@ function Form() {
                 <label className='mb-1 font-bold text-gray-600'>Sexo</label>
                 <div>
                     <input type='radio' name='sexo' className='mr-3' /> <span>Masculino</span>
-                    <input type='radio' name='sexo' className='ml-3' /> <span>Feminino</span>
+                    <input type='radio' name='sexo' className='mx-3' /> <span>Feminino</span>
                 </div>
             </div>
 
-            <div className='flex items-center justify-center w-56 h-12 my-10 font-bold bg-yellow-500 rounded-md'>CONCLUIR CADASTRO</div>
+            
+            <input type="submit" value="CONCLUIR CADASTRO" className='flex items-center justify-center w-56 h-12 my-10 font-bold bg-yellow-500 rounded-md cursor-pointer'></input>
         </form>
     )
 }
