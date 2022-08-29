@@ -17,28 +17,30 @@ function Content() {
 
                 {/* BOX IMAGENS */}
                 <div className='flex flex-col w-auto h-auto mt-10 md:flex-row'>
-                    
-                    {/* 1 */}
-                    <div className='my-4 shadow-xl md:mx-4 md:my-0 rounded-2xl shadow-gray-300 w-72'>
-                        <img src={imagemMusculacao} alt="" className='h-60 rounded-t-2xl' />
-                        <div className='flex items-center justify-center h-10'>Áreas de musculação e cárdio</div>
-                    </div>
-
-                    {/* 2 */}
-                    <div className='my-4 shadow-xl md:mx-4 md:my-0 rounded-2xl shadow-gray-300 w-72'>
-                        <img src={imagemSalas} alt="" className='h-60 rounded-t-2xl' />
-                        <div className='flex items-center justify-center h-10'>Salas exclusivas de aulas coletivas</div>
-                    </div>
-                    {/* 3 */}
-                    <div className='my-4 shadow-xl md:mx-4 md:my-0 rounded-2xl shadow-gray-300 w-72'>
-                        <img src={imagemEquipamento} alt="" className='h-60 rounded-t-2xl' />
-                        <div className='flex items-center justify-center h-10'>Salas exclusivas de aulas coletivas</div>
-                    </div>
+                    <ImageBox src={imagemMusculacao} text={'Áreas de musculação e cárdio'}/>
+                    <ImageBox src={imagemSalas} text={'Salas exclusivas de aulas coletivas'}/>
+                    <ImageBox src={imagemEquipamento} text={'Equipamentos de alta qualidade'}/>
                 </div>
 
             </div>
         </div>
     )
 }
+
+type ImageContent = {
+    src: string,
+    text: string,
+}
+const ImageBox: React.FC<ImageContent> = ({
+    src,
+    text,
+}) => (
+    <div className='z-10 my-4 realceBox md:mx-4 md:my-0 rounded-2xl w-72'>
+    <div className='z-0 shadow-2xl rounded-2xl shadow-gray-300'>
+        <img src={src} alt="" className='h-60 rounded-t-2xl' />
+        <div className='flex items-center justify-center h-10'>{text}</div>
+    </div>
+</div>
+);
 
 export default Content
