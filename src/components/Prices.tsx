@@ -1,4 +1,4 @@
-import { useState } from "react"
+import React, { useState } from "react"
 import { Link } from "react-router-dom"
 
 function Prices() {
@@ -16,7 +16,6 @@ function Prices() {
     }
 
     function checkPlano() {
-        console.log('cliquei')
         if (plano) {
             return '/register/' + plano
         } else {
@@ -65,7 +64,7 @@ function Prices() {
     )
 }
 
-type onClick = () => void;
+type onClick = (event: React.MouseEvent<HTMLElement>) => void;
 
 type PropsPlano = {
     name: String,
@@ -84,8 +83,8 @@ flex flex-col cursor-pointer transition shadow-2xl  w-80 shadow-gray-400 rounded
             <div className="flex items-center justify-center h-10 font-bold bg-yellow-500">NORMAL</div> {/* TARJA AMARELA */}
             <div className="pt-6 bg-white h-80 rounded-b-2xl"> {/* DESCRICÃO PLANO */}
                 <ul className="pr-4 text-gray-600 list-disc pl-9">
-                    {beneficios.map(item => (
-                        <li className="mb-3">{item}</li>
+                    {beneficios.map((item,index) => (
+                        <li className="mb-3" key={index}>{item}</li>
                     ))}
                 </ul>
             </div>
